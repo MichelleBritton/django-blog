@@ -23,7 +23,8 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <!-- This is a control statement with the curly braces and % sign. It's a URL which will be the post detail URL creaated in urls.py which accepts post.slug as an argument -->
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
