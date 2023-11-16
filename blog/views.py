@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -63,6 +64,7 @@ class PostDetail(View):
                 "comment_form": comment_form,
                 "liked": liked
             },
+            messages.success(request, 'You have left a comment')
         )
 
 class PostLike(View):
